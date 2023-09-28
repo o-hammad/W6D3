@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-    def user_params
-        params.require(:user).permit(:username)
-    end 
+   
     def index
         render json: User.all
     end
@@ -37,5 +35,9 @@ class UsersController < ApplicationController
         else 
             render json: user.errors.full_messages, status: :unprocessable_entity
         end 
+    end 
+    private
+    def user_params
+        params.require(:user).permit(:username)
     end 
 end
