@@ -41,4 +41,13 @@ ApplicationRecord.transaction do
     aw_s6 = ArtworkShare.create!(artwork: aw3, viewer: u6)
     aw_s7 = ArtworkShare.create!(artwork: aw4, viewer: u7)
     aw_s8 = ArtworkShare.create!(artwork: aw4, viewer: u8)
+
+    c1 = Comment.create!(artwork: aw1, author: u5, body: 'blah')
+    c2 = Comment.create!(artwork: aw1, author: u6, body: 'blah blah')
+    c3 = Comment.create!(artwork: aw2, author: u7, body: 'blah blah blah')
+    c4 = Comment.create!(artwork: aw2, author: u8, body: 'blah blah blah blah')
+    c5 = Comment.create!(artwork: aw3, author: u5, body: 'blah blah blah blah blah')
+    c6 = Comment.create!(artwork: aw3, author: u6, body: 'blah blah blah blah blah blah')
+    c7 = Comment.create!(artwork: aw4, author: u7, body: 'blah blah blah blah blah blah blah')
+    c8 = Comment.create!(artwork: aw4, author: u8, body: 'blah blah blah blah blah blah blah blah')
 end

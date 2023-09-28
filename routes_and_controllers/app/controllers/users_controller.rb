@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
    
     def index
-        render json: User.all
+        if !params.empty?
+            params.each do |k, v|
+                user = User.find_by("? = ?", k, v)
+
+                render json: user
+            end
+        else
+            render json: User.all
+        end
     end
     
     def create 

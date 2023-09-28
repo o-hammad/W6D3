@@ -22,4 +22,8 @@ Rails.application.routes.draw do
   # end
 
   get 'users/:user_id/artworks', to: 'artworks#index'
+
+  get 'users/:user_id/comments', to: 'comments#index'
+
+  get 'artworks/:artwork_id/comments', to: 'comments#index'
 end
