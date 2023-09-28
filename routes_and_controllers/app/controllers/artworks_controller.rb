@@ -4,7 +4,12 @@ class ArtworksController < ApplicationController
         render json: artwork
     end 
     def create
-        render json: params
+        artwork = Artwork.new(artwork_params)
+        if artwork.save
+            redirect_to artwork_url(artwork)
+        else 
+            render json: artwork.errors_full_messages, status: :unprocessable_entity
+        end 
     end 
     def show
         artwork = Artwork.find(params[:id])
